@@ -1,6 +1,8 @@
 import logging
 import random
 
+from firebase import Storage
+
 logger = logging.getLogger(__name__)
 
 
@@ -41,6 +43,10 @@ class Messenger(object):
         self.clients.send_user_typing_pause(channel_id)
         answer = "To eat the chicken on the other side! :laughing:"
         self.send_message(channel_id, answer)
+        
+    def read_file(self, channel_id):
+        txt = Storage.load()
+        self.send_message(channel_id, txt)
         
     def run_test(self, channel_id):
         running = "Running Test"
