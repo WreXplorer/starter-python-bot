@@ -70,12 +70,10 @@ class Messenger(object):
     def new_task(self, channel_id, task):
         try:
             taskList = open('list.txt')
-            print("opened")
             tasklist.close()
         except:
             tasklist = open('list.txt', 'w')
             tasklist.close()
-            print("created")
         taskInfo = task.replace("@staplesbot ","")
         taskInfo = taskInfo.replace("todo ","")
         try:
@@ -88,7 +86,7 @@ class Messenger(object):
                 print i
                 self.send_message(channel_id, list_array[i])
         except:
-            print("failed")
+            self.send_message(channel_id, "Failed")
         self.clients.send_user_typing_pause(channel_id)
         txt = "Added new task!"
         self.send_message(channel_id, txt)
