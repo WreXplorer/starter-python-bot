@@ -44,10 +44,10 @@ class Messenger(object):
         
     def run_test(self, channel_id):
         running = "Running Test"
-        self.send_message(channel_id, question)
+        self.send_message(channel_id, running)
         self.clients.send_user_typing_pause(channel_id)
-        Result = "Success :staples:"
-        self.send_message(channel_id, answer)
+        result = "Success :staples:"
+        self.send_message(channel_id, result)
 
 
     def write_error(self, channel_id, err_msg):
