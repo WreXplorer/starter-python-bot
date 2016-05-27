@@ -10,4 +10,4 @@ class Storage:
         fb = firebase.FirebaseApplication(FIREBASE_URL, None) # Create a reference to the Firebase Application
         results[] = fb.get('/Testing/Node1', "") # Get  data from firebase
         
-        return result
+        return result[0]
