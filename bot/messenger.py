@@ -77,12 +77,12 @@ class Messenger(object):
             tasklist.close()
         with open('list.txt') as my_file:
             list_array = my_file.readlines()
-        for i in list_array:
+        for i, v in list_array:
             txt = (str(i) + ": " + list_array[i])
             self.send_message(channel_id, txt)
         list_array.append(task)
         tasklist = open('list.txt', 'w')
-        for i in list_array:
+        for i, v in list_array:
             tasklist.write(list_array[i])
         
         self.clients.send_user_typing_pause(channel_id)
