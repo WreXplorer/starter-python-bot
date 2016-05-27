@@ -9,6 +9,6 @@ class Storage:
         fb.put('/Testing/Node1', "Data", data) # Add data to Node Node1
     def loadit(self):
         fb = firebase.FirebaseApplication(FIREBASE_URL, None) # Create a reference to the Firebase Application
-        result = str(fb.get('/Testing', "")[3]) # Get  data from firebase
+        result = str(fb.get('/Testing', "")) # Get  data from firebase
         
-        return result
+        return result[2]
