@@ -1,7 +1,7 @@
 import logging
 import random
 
-from firebase import Storage
+from storageFire import Storage
 
 logger = logging.getLogger(__name__)
 
