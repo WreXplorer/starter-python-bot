@@ -87,6 +87,8 @@ class Messenger(object):
             for i in enumerate(list_array):
                 print i
                 self.send_message(channel_id, list_array[i])
+        except:
+            print("failed")
         self.clients.send_user_typing_pause(channel_id)
         txt = "Added new task!"
         self.send_message(channel_id, txt)
