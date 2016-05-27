@@ -3,12 +3,11 @@ from firebase import firebase
 FIREBASE_URL = "https://staples-bot.firebaseio.com/"
 
 class Storage:
-    def saveit(self, arg):
+    def saveit(self, data, value):
         fb = firebase.FirebaseApplication(FIREBASE_URL, None) # Create a reference to the Firebase Application
-        data = arg
-        fb.put('/Testing/Node1', "Data", data) # Add data to Node Node1
+        fb.put('/Testing/Node1', data, value) # Add data to Node Node1
     def loadit(self):
         fb = firebase.FirebaseApplication(FIREBASE_URL, None) # Create a reference to the Firebase Application
-        result = str(fb.get('/Testing', "")) # Get  data from firebase
-        result = result.split('u')
+        results[] = fb.get('/Testing/Node1', "") # Get  data from firebase
+        
         return result
