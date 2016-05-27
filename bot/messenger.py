@@ -70,5 +70,4 @@ class Messenger(object):
     def new_task(self, channel_id, task):
         taskList = open('list.txt', 'r+')
         taskList.write(task)
-        taskList.write("
-        ")
+        taskList.write("\n")
