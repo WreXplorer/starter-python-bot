@@ -3,6 +3,7 @@ import random
 
 from storageFire import Storage
 
+storageFile = Storage()
 logger = logging.getLogger(__name__)
 
 
@@ -45,7 +46,7 @@ class Messenger(object):
         self.send_message(channel_id, answer)
         
     def read_file(self, channel_id):
-        txt = Storage.loadit()
+        txt = storageFile.loadit()
         self.send_message(channel_id, txt)
         
     def run_test(self, channel_id):
