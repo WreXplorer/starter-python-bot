@@ -41,6 +41,13 @@ class Messenger(object):
         self.clients.send_user_typing_pause(channel_id)
         answer = "To eat the chicken on the other side! :laughing:"
         self.send_message(channel_id, answer)
+        
+    def run_test(self, channel_id):
+        running = "Running Test"
+        self.send_message(channel_id, question)
+        self.clients.send_user_typing_pause(channel_id)
+        Result = "Success :staples:"
+        self.send_message(channel_id, answer)
 
 
     def write_error(self, channel_id, err_msg):
