@@ -9,7 +9,7 @@ class Storage:
     def loadit(self):
         fb = firebase.FirebaseApplication(FIREBASE_URL, None) # Create a reference to the Firebase Application
         results = []
-        for x in fb.get('/Lists/Todo', None):
-            results[x] = fb.get('/Lists/Todo', str(x))
+        for idx,item in enumerate(fb.get('/Lists/Todo', None)):
+            results[idx] = fb.get('/Lists/Todo', str(idx))
         
         return results[1]
