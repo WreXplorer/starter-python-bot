@@ -2,7 +2,7 @@ from firebase import firebase
 
 FIREBASE_URL = "https://staples-bot.firebaseio.com/"
 
-class Storage(self, arg):
+class Storage(arg):
     def saveit(arg):
         fb = firebase.FirebaseApplication(FIREBASE_URL, None) # Create a reference to the Firebase Application
         data = arg
