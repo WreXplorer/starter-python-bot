@@ -69,11 +69,24 @@ class Messenger(object):
     
     def new_task(self, channel_id, task):
         try:
-            taskList = open('list.txt', 'r+')
+            taskList = open('list.txt')
+            print("opened")
+            tasklist.close()
         except:
             tasklist = open('list.txt', 'w')
             tasklist.close()
-            tasklist = open('list.txt', 'r+')
-        taskList.write(task)
-        taskList.write("\n")
-        tasklist.close()
+        with open('list.txt') as my_file:
+            list_array = my_file.readlines()
+        for i in list_array:
+            txt = (str(i) + ": " + list_array[i])
+            self.send_message(channel_id, txt)
+        list_array.append(task)
+        tasklist = open('list.txt', 'w')
+        for i in list_array:
+            tasklist.write(list_array[i])
+        
+        self.clients.send_user_typing_pause(channel_id)
+        self.send_message(channel_id, task)
+        text = "Added new task!"
+        
+        
