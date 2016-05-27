@@ -8,6 +8,6 @@ class Storage:
         fb.put('/Lists/Todo', data, value) # Add data to Node Node1
     def loadit(self):
         fb = firebase.FirebaseApplication(FIREBASE_URL, None) # Create a reference to the Firebase Application
-        results = fb.get('/Lists/Todo', "1") # Get  data from firebase
+        results = fb.get('/Lists/Todo', None, {'print': 'pretty'}) # Get  data from firebase
         
         return results
