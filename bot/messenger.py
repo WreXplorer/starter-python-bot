@@ -68,6 +68,12 @@ class Messenger(object):
         self.clients.web.chat.post_message(channel_id, txt, attachments=[attachment], as_user='true')
     
     def new_task(self, channel_id, task):
-        taskList = open('list.txt', 'r+')
+        try:
+            taskList = open('list.txt', 'r+')
+        except:
+            tasklist = open('list.txt', 'w')
+            tasklist.close()
+            tasklist = open('list.txt', 'r+')
         taskList.write(task)
         taskList.write("\n")
+        tasklist.close()
