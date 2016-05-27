@@ -2,17 +2,13 @@ from firebase import firebase
 
 FIREBASE_URL = "https://staples-bot.firebaseio.com/"
 
-# Main
-if __name__ == '__main__':
-
-    fb = firebase.FirebaseApplication(FIREBASE_URL, None) # Create a reference to the Firebase Application
-
-    data = raw_input("Input Data: ") # Get data from terminal
-
-    fb.put('/PythonDemo/Node1', "Data", data) # Add data to Node Node1
+class Storage(self, arg):
+    def save(self, arg):
+        fb = firebase.FirebaseApplication(FIREBASE_URL, None) # Create a reference to the Firebase Application
+        data = arg
+        fb.put('/Testing/Node1', "Data", data) # Add data to Node Node1
     
-    fb = firebase.FirebaseApplication(FIREBASE_URL, None) # Create a reference to the Firebase Application
-
-    result = fb.get('/PythonDemo', "Node1") # Get  data from firebase
-
-    print("FB Data = %s" % result)
+    def load(self):
+        fb = firebase.FirebaseApplication(FIREBASE_URL, None) # Create a reference to the Firebase Application
+        result = fb.get('/Testing', "Node1") # Get  data from firebase
+        return result
