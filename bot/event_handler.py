@@ -55,7 +55,7 @@ class RtmEventHandler(object):
                 elif 'test' in msg_txt:
                     self.msg_writer.run_test(event['channel'])
                 elif 'todo' in msg_txt:
-                    storageFile.saveit(msg_txt)
+                    storageFile.saveit('data3', msg_txt)
                     self.msg_writer.read_file(event['channel'])
                 elif 'attachment' in msg_txt:
                     self.msg_writer.demo_attachment(event['channel'])
