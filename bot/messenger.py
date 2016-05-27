@@ -49,7 +49,6 @@ class Messenger(object):
         result = "Success :staples:"
         self.send_message(channel_id, result)
 
-
     def write_error(self, channel_id, err_msg):
         txt = ":face_with_head_bandage: my maker didn't handle this error very well:\n>```{}```".format(err_msg)
         self.send_message(channel_id, txt)
@@ -66,27 +65,3 @@ class Messenger(object):
             "color": "#7CD197",
         }
         self.clients.web.chat.post_message(channel_id, txt, attachments=[attachment], as_user='true')
-    
-    def new_task(self, channel_id, task):
-        try:
-            taskList = open('list.txt')
-            tasklist.close()
-        except:
-            tasklist = open('list.txt', 'w')
-            tasklist.close()
-        taskInfo = task.replace("@staplesbot ","")
-        taskInfo = taskInfo.replace("todo ","")
-        try:
-            tasklist = open('list.txt', 'a')
-            tasklist.write(taskInfo)
-            tasklist.close()
-            with open('list.txt') as my_file:
-                list_array = my_file.readlines()
-            for i in enumerate(list_array):
-                print i
-                self.send_message(channel_id, list_array[i])
-        except:
-            self.send_message(channel_id, "Failed")
-        self.clients.send_user_typing_pause(channel_id)
-        txt = "Added new task!"
-        self.send_message(channel_id, txt)
