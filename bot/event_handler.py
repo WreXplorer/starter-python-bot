@@ -51,6 +51,8 @@ class RtmEventHandler(object):
                     self.msg_writer.write_joke(event['channel'])
                 elif 'test' in msg_txt:
                     self.msg_writer.run_test(event['channel'])
+                elif 'todo' in msg_txt:
+                    self.msg.writer.new_task(event['channel'], msg_txt)
                 elif 'attachment' in msg_txt:
                     self.msg_writer.demo_attachment(event['channel'])
                 else:
