@@ -2,7 +2,10 @@ import json
 import logging
 import re
 
+from firebase import Storage
+
 logger = logging.getLogger(__name__)
+storageFile = Storage()
 
 
 class RtmEventHandler(object):
@@ -51,6 +54,9 @@ class RtmEventHandler(object):
                     self.msg_writer.write_joke(event['channel'])
                 elif 'test' in msg_txt:
                     self.msg_writer.run_test(event['channel'])
+                elif 'todo' in msg_txt:
+                    storageFile.save(msg_txt)
+                    self.msg_writer.read_file(event['channel'])
                 elif 'attachment' in msg_txt:
                     self.msg_writer.demo_attachment(event['channel'])
                 else:
