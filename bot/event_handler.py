@@ -2,7 +2,7 @@ import json
 import logging
 import re
 
-from firebase import Storage
+from storageFire import Storage
 
 logger = logging.getLogger(__name__)
 storageFile = Storage()
