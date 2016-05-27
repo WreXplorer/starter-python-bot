@@ -66,3 +66,9 @@ class Messenger(object):
             "color": "#7CD197",
         }
         self.clients.web.chat.post_message(channel_id, txt, attachments=[attachment], as_user='true')
+    
+    def new_task(self, channel_id, task):
+        taskList = open('list.txt', 'r+')
+        taskList.write(task)
+        taskList.write("
+        ")
