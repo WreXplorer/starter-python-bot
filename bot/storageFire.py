@@ -10,5 +10,5 @@ class Storage:
     def loadit(self):
         fb = firebase.FirebaseApplication(FIREBASE_URL, None) # Create a reference to the Firebase Application
         result = str(fb.get('/Testing', "")) # Get  data from firebase
-        
+        result = result.split(''')
         return result[2]
